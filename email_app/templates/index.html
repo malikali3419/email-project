@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang=en>
+    
+
+<head>
+     {% load static %}
+     <meta charset=utf-8>
+     <meta name=viewport content="width=device-width, initial-scale=1">
+     <meta name=description content="Interior Designing, Corporate Interior Designing, Office Interior Designing">
+     <link rel="shortcut icon" href="{%static 'img/favicon.png' %}">
+     <title>30 Years of Experience</title>
+     <!-- css -->
+     
+     <link href="{% static 'css/bootstrap.min.css' %}" rel=stylesheet>
+     <link href="{% static 'css/overwrite.css' %}" rel=stylesheet>
+     <link href="{% static 'css/font-awesome.css' %}" rel=stylesheet>
+     <link href="{% static 'css/animate.css' %}" rel=stylesheet>
+     <link href="{% static 'css/style.css' %}" rel=stylesheet>
+     <link href="{% static 'css/default.css' %}" rel=stylesheet>
+     <link rel=stylesheet href="{% static 'css/styles.css' %}" type="text/css" />
+     <link rel="stylesheet" href="{% static 'css/ouibounce.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap"
+          rel="stylesheet">
+     <script type="text/javascript" src="{%static 'js/ouibounce.js' %}"></script>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <!-- start script -->
+
+     <SCRIPT language=Javascript>
+
+          function isNumberKey(evt) {
+               var charCode = (evt.which) ? evt.which : event.keyCode
+               if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+
+               return true;
+          }
+          //-->
+     </SCRIPT>
+</head>
+
+<body>
+     <div id=wrapper>
+          <header>
+               <div class="navbar navbar-default" role=navigation>
+                    <div class=container>
+                         <div class=navbar-header>
+                              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                   data-target=".navbar-collapse"> <span class=icon-bar></span> <span
+                                        class=icon-bar></span> <span class=icon-bar></span> </button>
+                              <a class=navbar-brand href="#"><img src="{%static 'img/logo.png' %}" alt="waterproofing"
+                                        class="img-responsive" /></a>
+                         </div>
+                         <div class="collapse navbar-collapse">
+                              <ul class="nav navbar-nav">
+                                   <li><a style="color:#a31e5d" id=GoToHome href="#home" class=selected>Home</a></li>
+                                   <!-- <li ><a style="color:#a31e5d" id=GoToHome href="#gallery2" class=selected>Video Gallery</a></li> -->
+                                   <li><a style="color:#a31e5d" id=GoToPricing href="#about">Services</a></li>
+                                   <li><a style="color:#a31e5d" id=GoToEarth href="#sky">Why Zivia IVF</a></li>
+                                   <li><a style="color:#a31e5d" id=GoToEarth href="#gallery">Success Stories</a></li>
+                                   <li class="call-us-back"> <a style="color:#fff !important; font-weight:bold;"
+                                             id=GoToArchitect href="#contact">CALL ME BACK</a></li>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+          </header>
+
+          <!-- home -->
+          <section id=home class=overlay-home>
+               <div class=container>
+                    <div class="row mobile-spacer">
+                         <div class="col-md-7 col-sm-12 col-sm-12 wow fadeInLeft" data-wow-delay=0.4s>
+                              <div class="home-contain text-center">
+                                   <div class="home-box">
+                                        <h2><b>30 Years of Experience</b></h2>
+                                        <p class="banner2" style="font-family: 'Open Sans', sans-serif;"><b>FIRST STEP
+                                                  TOWARDS BECOMING PARENTS</b></p>
+                                        <!-- <h3 style="font-size:20px;">Fast and Reliable Machines</h3> -->
+                                        <h2 style="font-size:17px; line-height:25px; margin-top: 20px;">BOOK A FREE
+                                             CONSULTATION</h2>
+                                        <hr>
+                                        <h3 style="color:#fff !important;">CALL NOW: <a
+                                                  href="tel:7219611472">72196-11472</a></h3>
+                                        <h3></h3>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="wrapper">
+                              <div id="calendar"></div>
+                         <div class="col-md-4 col-sm-12 col-xs-12" id="form" style="float:right">
+                              <div class="home-form">
+                                   <h3 class="text-center"> ENQUIRE NOW !</h3>
+                                   <div id=result></div>
+                                   <fieldset id="contact_form" class="form-horizontal">
+                                        <form action=""  method="post" name="ppc_top" class="c_form"
+                                             id="ppc_form">
+                                             {%csrf_token%}
+                                             <div id=result></div>
+                                             <div class=form-group>
+                                                  <div class=col-lg-12>
+                                                       <select name="appointment_time" required
+                                                            class="form-control form-block input-lg"  id="appointment_date">
+                                                            <option value="none" selected>Appointment Time</option>
+                                                            <option value="10Am - 12Pm">10Am - 12Pm</option>
+                                                            <option value="2Pm to 2Pm">2Pm to 2Pm</option>
+                                                            <option value="2Pm - 4Pm">2Pm - 4Pm</option>
+                                                            <option value="4Pm - 6Pm">4Pm - 6Pm</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                             <div class=form-group>
+                                                  <div class=col-lg-12>
+                                                       <input name="name" required
+                                                            class="form-control form-block input-lg" name="name" id="name"
+                                                            placeholder="Your Name" />
+                                                            <input class="form-control form-block input-lg" style="display: none;" type="text" name="date" id="data_string">
+                                                  </div>
+                                             </div>
+                                             <!-- <div class=form-group>
+                     <div class=col-lg-12>
+                    <input type="email" name="email" required class="form-control form-block input-lg" id="email" placeholder="Your E-mail"/>
+                  </div>
+                   </div> -->
+                                             <div class=form-group>
+                                                  <div class=col-lg-12>
+                                                       <input type="tel" name="phone"
+                                                            onKeyPress="return isNumberKey(event)" required
+                                                            class="form-control form-block input-lg" name="phone" id="phone"
+                                                            placeholder="Your Phone Number"  >
+                                                  </div>
+                                             </div>
+                                             <!--ADDED BY ME-->
+                                             <div class=form-group>
+                                                  <div class=col-lg-12>
+                                                       <input name="message" required
+                                                            class="form-control form-block input-lg" name="message" id="message"
+                                                            placeholder="Your Message" />
+                                                  </div>
+                                             </div>
+                                             <div class=form-group>
+                                                  <div class=col-lg-12>
+                                                       <input type="email" name="email" required
+                                                            class="form-control form-block input-lg"  id="mail"
+                                                            placeholder="Your Email" />
+                                                  </div>
+                                             </div>
+                                             <input type="hidden" id="ipFormInput2" name="ipFormInput">
+                                             <!--ADDED BY ME-->
+                                             <div class=form-group>
+                                                  <div class="col-lg-12 captcha">
+                                                       <!-- <div class="g-recaptcha"
+                                                            data-sitekey="6LcVjSopAAAAAAWH-uqutoYW4gO1wD6Ezx2Ytq5l">
+                                                       </div> -->
+                                                       <input type="submit" name="submit"
+                                                            class="submit_buttom btn btn-primary btn-bavel btn-lg whitebg"
+                                                            value="Get Details" id="first-form-btn" />
+                                                  </div>
+                                             </div>
+                                        </form>
+                                   </fieldset>
+                                   <div class="contact-note"> We don't share your personal info with anyone. Your
+                                        privacy is of utmost importance to us. </div>
+                                   <div class="contact-email"> <a href="mailto:info@ziviaivf.com">info@ziviaivf.com</a>
+                                   </div>
+                              </div>
+                         </div>
+                            
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+
+          <!-- ----fertility------>
+          <div class="fert-heading">
+               <h1>WE ARE SPECIALISED IN</h1>
+          </div>
+          <div class="fert-wrapper">
+               <div class="img-1">
+                    <!-- <img src="/img/icons/male-infertility.png" alt=""> -->
+                    <img class="" src="{%static 'img/icons/male-infertility.png' %}" alt="">
+                    <p style="color: #000;">MALE INFERTILITY</p>
+                    <p style="font-size: 15px;">Male infertility can often be addressed with<br>lifestyle changes,
+                         medical treatments,<br>and assisted reproductive technologies.</p>
+               </div>
+               <div class="img-2">
+                    <!-- <img src="/img/icons/female-infertility.png" alt=""> -->
+                    <img class="" src="{%static 'img/icons/female-infertility.png' %}" alt="">
+                    <p style="color: #000;">FEMALE INFERTILITY</p>
+                    <p style="font-size: 15px;">Female infertility is often treatable with<br>medication, surgery, or
+                         assisted reproductive<br>technologies, enhancing conception possibilities.</p>
+               </div>
+               <div class="img-3">
+                    <!-- <img src="/img/icons/unexplained-infertility.png" alt=""> -->
+                    <img class="" src="{%static 'img/icons/unexplained-infertility.png' %}" alt="">
+                    <p style="color: #000;">UNEXPLAINED INFERTILITY</p>
+                    <p style="font-size: 15px;">Unexplained infertility, though challenging,<br>can be approached with
+                         tailored treatments and<br>assisted reproductive techniques for success.</p>
+               </div>
+          </div>
+
+          <!-- end of home -->
+
+          <!-- Video Slider -->
+
+          <!-- <section id="gallery2"> -->
+          <!-- <div id="video1" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video1.mp4"  muted loop
+                class=gallery-video alt="agwtrading" width=550 height=550 ></video>      
+          </div>
+          <div id="video2" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video2.mp4"  muted loop
+               class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video> 
+              
+          </div>
+          <div id="video3" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video3.mp4"  muted loop
+                 class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video>     
+          </div>
+          <div id="video4" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video4.mp4"  muted loop
+                class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video> 
+          </div>
+          <div id="video5" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video5.mp4"  muted loop
+                class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video> 
+          </div>
+          <div id="video6" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video6.mp4"  muted loop
+                class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video> 
+          </div>
+          <div id="video7" class="video-wrapper" style="display:none;">
+               <video src="img/Videos/video7.mp4"  muted loop
+                class=gallery-video alt="agwtrading " width=550 height=550 style="display:none;"></video> 
+          </div> -->
+
+          <!-- <h3 class="heading-gallery2 text-center2">Watch our machine</h3> -->
+          <!-- <div class="list_carousel2 responsive2 gallery2"> -->
+          <!-- <ul id="foo42" class=screenshot2> -->
+          <!-- <li> <img src="img/preview-size/male.png" class=gallery-img alt="agwtrading" width=550 height=550 /></a> <p style="text-align: center; font-size: 25px;">Male Fertility</p></li> -->
+          <!-- <li> <img src="img/preview-size/female.png" class=gallery-img alt="agwtrading" width=550 height=550 /></a> <p style="text-align: center; font-size: 25px;">Female Fertility</p></li> -->
+          <!-- <li> <img src="img/preview-size/male.png" class=gallery-img alt="agwtrading" width=550 height=550 /></a><p style="text-align: center; font-size: 25px;">Unexplained</p> </li> -->
+          <!-- <li> <a href="#video4" class=fancybox data-fancybox-group=gallery1> <img src="img/Videos/img4.jpg" class=gallery-img alt="agwtrading" width=550 height=550 /> </a> </li> -->
+          <!-- <li> <a href="#video5" class=fancybox data-fancybox-group=gallery1><img src="img/Videos/img5.jpg" class=gallery-img alt="agwtrading" width=550 height=550 /></a> </li> -->
+          <!-- <li> <a href="#video6" class=fancybox data-fancybox-group=gallery1><img src="img/Videos/img6.jpg" class=gallery-img alt="agwtrading" width=550 height=550 /></a> </li> -->
+          <!-- <li> <a href="#video7" class=fancybox data-fancybox-group=gallery1><img src="img/Videos/img7.jpg" class=gallery-img alt="agwtrading" width=550 height=550 /></a> </li> -->
+          <!-- <li> <a href="img/large-size/img9.jpg" class=fancybox data-fancybox-group=gallery><img src="img/preview-size/img9.jpg" class=gallery-img alt="HARNOORDESIGNS gallery" width=550 height=550 /></a> </li> -->
+          <!-- <li> <a href="img/large-size/img10.jpg" class=fancybox data-fancybox-group=gallery><img src="img/preview-size/img10.jpg" class=gallery-img alt="HARNOORDESIGNS gallery" width=550 height=550 /></a> </li> -->
+          <!-- </ul> -->
+          <!-- <div class=clearfix></div>  -->
+          <!-- <div class=carousel-nav2> <a id=prev45 href="#"><i class="fa fa-angle-left"></i> Prev</a> <a id=next45 href="#">Next <i class="fa fa-angle-right"></i></a> </div> -->
+          <!-- </div> -->
+          <!-- </section> -->
+
+          <!-- Video Slider end -->
+
+
+          <!-- about us -->
+          <section id=about>
+               <div class="half-box-left">
+                    <h3 class="heading heading-about">We Assist With</h3>
+                    <ul class="feature-list">
+                         <li><img class="icons" src="{%static 'img/icons/roof.png' %}" alt="">
+                              <p><b>IVF or In-vitro fertilisation: </b> IVF, the 'test-tube baby' technique, fertilizes
+                                   eggs externally, placing embryos in the uterus, providing hope to couples.</p>
+                         </li>
+                         <li> <img class="icons" src="{%static 'img/icons/terrace.png' %}" alt="">
+                              <p><b>ICSI: </b>ICSI, an advancement in IVF, injects one sperm into one mature egg,
+                                   revolutionizing male infertility treatment and enabling fatherhood.</p>
+                         </li>
+                         <li><img class="icons" src="{%static 'img/icons/foundation.png' %}" alt="">
+                              <p><b>IUI/Intrauterine insemination: </b>IUI, or Intrauterine Insemination, is a fertility
+                                   treatment where sperm is placed directly into the uterus to enhance.</p>
+                         </li>
+                         <li> <img class="icons" src="{%static 'img/icons/bathroom.png' %}" alt="">
+                              <p><b>Donor IVF Services: </b> Donor IVF services offer the option of using donated eggs
+                                   or sperm to help achieve pregnancy.</p>
+                         </li>
+                         <!-- <li> <img class="icons" src="img/icons/bridge deck.png" alt="">
+               <p><b>Property Value:</b> A well-maintained, bathroom adds value to your property.</p>
+             </li> -->
+                    </ul>
+               </div>
+               <div class=half-box-right> </div>
+     </div>
+     </section>
+     <!-- end of about us  -->
+
+     <!-- WHY Us -->
+     <section id=sky>
+          <div class=half-box-right> </div>
+          <div class="half-box-left">
+               <h3 class="heading main-heading">ZIVIA IVF FOR YOUR INFERTILITY SOLUTION</h3>
+               <ul class=feature-list>
+                    <li> <img class="icons2" src="{%static 'img/icons/experience.png' %}" alt="">
+                         <p class="whyCoral"><b style="font-size: 30px;">30+ Years</b><br>Our doctors have over 30 years
+                              of expertise in the field of Infertility</p>
+                    </li>
+                    <li> <img class="icons2" src="{%static 'img/icons/success.png' %}" alt="">
+                         <p class="whyCoral"><b style="font-size: 30px;">73% Success</b><br>We achieve an impressive
+                              73%<br>success rate in fertility.</p>
+                    </li>
+                    <li> <img class="icons2" src="{% static 'img/icons/surogcate.png' %}" alt="">
+                         <p class="whyCoral"><b style="font-size: 30px;">20,000+ Deliveries</b><br>We've accomplished
+                              over 18,000 successful deliveries in our record.</p>
+                    </li>
+                    <li> <img class="icons2" src="{%static 'img/icons/delevries.png' %}" alt="">
+                         <p class="whyCoral"><b style="font-size: 30px;">1600+ Surrogate</b><br>We've helped bring over
+                              1,600<br>surrogate babies into the world.</p>
+                    </li>
+                    <!-- <li> <i class="fa fa-star-o"></i> -->
+                    <!-- <li><img class="icons2" src="img/icons/custom.png" alt="">
+        <p class="whyCoral"><b>Customized solutions:</b> Tailored to specific project requirements tailor-made offerings.
+     </p>
+      </li> -->
+               </ul>
+          </div>
+     </section>
+     <!-- end of Why US -->
+
+     <!-- gallery -->
+     <section id="gallery">
+          <h3 class="heading-gallery text-center">Success Stories</h3>
+          <div class="list_carousel responsive gallery">
+               <ul id=foo4 class=screenshot>
+                    <li><img src="{%static 'img/preview-size/img1.jpg' %}" class=gallery-img2 alt="ziviaivf" width=550
+                              height=550 /></a> </li>
+                    <li><img src="{%static 'img/preview-size/img2.jpg' %}" class=gallery-img2 alt="ziviaivf" width=550
+                              height=550 /></a> </li>
+                    <li><img src="{%static 'img/preview-size/img3.jpg' %}" class=gallery-img2 alt="ziviaivf" width=550
+                              height=550 /></a> </li>
+                    <li><img src="{% static 'img/preview-size/img4.jpg' %}" class=gallery-img2 alt="ziviaivf" width=550
+                              height=550 /></a> </li>
+                    <li> <img src="{% static 'img/preview-size/img5.jpg' %}" class=gallery-img2 alt="ziviaivf" width=550 height=550 />
+                         </a> </li>
+                    <!-- <li><img src="img/preview-size/img6.jpg" class=gallery-img2 alt="agwtrading" width=550 height=550 /></a> </li> -->
+                    <!-- <li><img src="img/preview-size/img7.jpg" class=gallery-img2 alt="agwtrading" width=550 height=550 /></a> </li> -->
+                    <!-- <li><img src="img/preview-size/img8.jpg" class=gallery-img2 alt="agwtrading" width=550 height=550 /></a> </li> -->
+                    <!-- <li> <a href="img/large-size/img9.jpg" class=fancybox data-fancybox-group=gallery><img src="img/preview-size/img9.jpg" class=gallery-img alt="HARNOORDESIGNS gallery" width=550 height=550 /></a> </li> -->
+                    <!-- <li> <a href="img/large-size/img10.jpg" class=fancybox data-fancybox-group=gallery><img src="img/preview-size/img10.jpg" class=gallery-img alt="HARNOORDESIGNS gallery" width=550 height=550 /></a> </li> -->
+               </ul>
+               <div class=clearfix></div>
+               <div class=carousel-nav> <a id=prev4 href="#"><i class="fa fa-angle-left"></i> Prev</a> <a id=next4
+                         href="#">Next <i class="fa fa-angle-right"></i></a> </div>
+          </div>
+     </section>
+     <!-- end of gallery -->
+
+     <!-- -------doctor------- -->
+     <div class="doctor-wrapper">
+          <div class="left-doc">
+               <h1>Our Mentor</h1>
+               <h1 id="sec-heading">& Medical Director</h1>
+               <p>Dr. Nayana Patel is the Medical Director of Zivia IVF. She has been practicing Obstetrics and
+                    Gynaecology, IVF Specialty and Surrogacy for over three decades to give a helping hand to many
+                    infertile couples using the best modern techniques. With a sharp acumen and a vast know-how of
+                    the industry, Dr. Patel also has unmatched expertise in handling high-risk pregnancies. With
+                    over 30 years of experience, she has managed to deliver 18,000+ healthy IVF babies and 1600+
+                    surrogate babies. <br>
+                    <br>
+                    With over 30 years of experience in the Assisted Reproduction Technique, IVF, ICSI, and
+                    Infertility Treatment, Dr. Nayana Patel is a respected name in the IVF world. A five-time gold
+                    medalist, author of myriad medical publications, award-winning Obstetrician, Gynaecologist, and
+                    IVF specialist gives you the chance to hope again.
+               </p>
+               <!-- <button>Read More!</button> -->
+          </div>
+          <div class="right-doc">
+               <!-- <img src="/img/Doctor-min.jpg" alt=""> -->
+               <img class="" src="{%static 'img/Doctor-min.jpg' %}" alt="">
+               <h1>
+                    <Datag>Dr. Nayana Patel</Datag>
+               </h1>
+               <p>MBBS, MD (Obs and Gynae),<br>Mentor & Medical Director, Zivia IVF</p>
+          </div>
+     </div>
+     <!-- -----end-doctor------ -->
+
+
+     <!-- ------awards------ -->
+     <!-- <div class="awards-head">
+          <h1>SUCCESS RATE</h1>
+     </div>
+     <div class="awards-wrapper">
+          <div class="awards">
+               <img class="" src="img/Doctor-min.jpg" alt="">
+               <p>National Fertility Award</p>
+          </div>
+          <div class="awards">
+               <img class="" src="img/Doctor-min.jpg" alt="">
+               <p>Female Infertility</p>
+          </div>
+          <div class="awards">
+               <img class="" src="img/Doctor-min.jpg" alt="">
+               <p>Unexplained</p>
+          </div>
+          <div class="awards">
+               <img class="" src="img/Doctor-min.jpg" alt="">
+               <p>Male Infertility</p>
+          </div>
+          <div class="awards">
+               <img class="" src="img/Doctor-min.jpg" alt="">
+               <p>Unexplained</p>
+          </div>
+
+     </div> -->
+     <!-- --------end-awards----- -->
+
+     <div class="fert-heading">
+          <h1>Our Fertility Experts</h1>
+     </div>
+     <div class="fert-wrapper">
+          <div class="img-1">
+               <!-- <img src="/img/icons/male-infertility.png" alt=""> -->
+               <img class="" src="{%static 'img/icons/richa.png' %}" alt="">
+               <p style="color: #000;">Dr. Richa Ainani Ahluwalia</p>
+               <p style="font-size: 15px;">She, an expert in obstetrics, gynecology,<br>nfertility, laparoscopy at Zivia
+                    IVF,<br>advocates joyful parenthood.</p>
+          </div>
+          <div class="img-2">
+               <!-- <img src="/img/icons/female-infertility.png" alt=""> -->
+               <img class="" src="{% static 'img/icons/girraj.png' %}" alt="">
+               <p style="color: #000;">Dr. Girraj Prasad Swarnkar</p>
+               <p style="font-size: 15px;">A gynecologist and infertility specialist at Zivia<br>IVF, prioritizes
+                    patient satisfaction, offering<br>personalized fertility solutions.</p>
+          </div>
+          <div class="img-3">
+               <!-- <img src="/img/icons/unexplained-infertility.png" alt=""> -->
+               <img class="" src="{%static 'img/icons/sharayu.png' %}" alt="">
+               <p style="color: #000;">Dr Sharayu N. Bhalerao</p>
+               <p style="font-size: 15px;">An obstetrician, gynecologist, infertility<br>specialist at Zivia IVF Pune,
+                    excels in<br>ART with vast experience.</p>
+          </div>
+     </div>
+
+
+     <section id=contact>
+          <div class=container>
+               <div class=row>
+                    <div class="col-md-4 col-sm-6" id="social-widget">
+                         <div style="color:#222" class="social-wrapper">
+                              <!--Free Skype Consultation*-->
+                              <img class="img-responsive" src="{%static 'img/logo-footer.png' %}" alt="logo aihp" />
+                              <p class="last-logo">The First Step in Becoming a Parent</p>
+                              <p class="text-justify"></p>
+                         </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 contact-list-widget">
+                         <h4 style="color:#000">CONNECT</h4>
+                         <ul class=contact-list>
+                              <li> <i class="fa fa-phone ftr-phone"></i><span itemprop="telephone"><a
+                                             style="color:#222; font-size:15px;"
+                                             href="tel:7219611472">72196-11472</a></span></li>
+                              <li> <i class="fa fa-envelope"></i> <a style="color:#222; font-size:15px;"
+                                        href="mailto:info@ziviaivf.com">info@ziviaivf.com</a>
+                                   </p>
+                              </li>
+                              <li> <i class="fa fa-map-marker" style=" font-size:20px; line-height:25px;"></i> Jaipur |
+                                   Pune | Lucknow
+                                   </p>
+                              </li>
+                         </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-12 contact-form-widget">
+                         <h4 style="color:#000">REQUEST CALL BACK</h4>
+                         <fieldset id="contact_form-footer" class="form-horizontal">
+                              <form action="mail-phone.php" name="form_bottom" method="post">
+                                   <div id=result-footer></div>
+                                   <div class=form-group>
+                                        <div class=col-lg-12>
+                                             <input type="tel" name="fPhone" required
+                                                  class="form-control-2 form-block input-lg" id="fPhone"
+                                                  onKeyPress="return isNumberKey(event)" placeholder="Your Phone"
+                                                  style="color:#222;border-color:#999" pattern="[9876][0-9]{9}">
+                                        </div>
+                                        <div class="col-lg-12 captcha-2">
+                                             <input type="hidden" type="tel" id="ipFormInput1" name="ipFormInput">
+                                             <input type="submit" class="btn btn-primary btn-bavel btn-lg ftbutn"
+                                                  id="submit_btn-footer" name="submit_bottom" value="CALL ME BACK" />
+                                        </div>
+                              </form>
+                         </fieldset>
+                    </div>
+               </div>
+          </div>
+     </section>
+     <footer>
+          <div class=container>
+               <div class=row>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                         <p class=copyright>2023 - 2024 &copy; Copyright Zivia IVF | All Rights Reserved. | ZIVIA PHARMACY PRIVATE LIMITED</p>
+                         <!-- <p class="privacy"><a href="privacy.html" style="color: #000;">Privacy Policy</a></p> -->
+                    </div>
+               </div>
+          </div>
+     </footer>
+     </div>
+     <script src="{%static 'js/jquery.js' %}"></script>
+     <script src="{%static 'js/bootstrap.min.js' %}"></script>
+     <script src="{%static 'js/caroufredsel/jquery.carouFredSel-5.5.0.js' %}"></script>
+     <script src="{%static 'js/caroufredsel/setting.js' %}"></script>
+     <script src="{% static 'js/navigation/waypoints.min.js' %}"></script>
+     <script src="{% static 'js/navigation/jquery.smooth-scroll.js' %}"></script>
+     <script src="{% static 'js/navigation/navbar.js' %}"></script>
+
+     <!-- gallery fance box -->
+     <script type="text/javascript" src="{%static 'source/jquery.fancybox.pack.js?v=2.1.5' %}"></script>
+     <link rel="stylesheet" type="text/css" href="{% static 'source/jquery.fancybox.css?v=2.1.5' %}" />
+     <!-- Add Button helper (this is optional) -->
+     <link rel="stylesheet" type="text/css" href="{% static 'source/helpers/jquery.fancybox-buttons.css?v=1.0.5' %}" />
+     <script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-buttons.js?v=1.0.5'%}"></script>
+     <!-- Add Thumbnail helper (this is optional) -->
+     <link rel="stylesheet" type="text/css" href="{%static 'source/helpers/jquery.fancybox-thumbs.css?v=1.0.7' %}" />
+     <script type="text/javascript" src="{%static 'source/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+     <!-- Add Media helper (this is optional) -->
+     <script type="text/javascript" src="{%static 'source/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+     <script type="text/javascript">
+          $(document).ready(function () {
+               $('.fancybox').fancybox();
+               $(".fancybox-effects-a").fancybox({
+                    helpers: {
+                         title: {
+                              type: 'outside'
+                         },
+                         overlay: {
+                              speedOut: 0
+                         }
+                    }
+               });
+          });
+     </script>
+
+     <!--outBrowser form -->
+     <div id="ouibounce-modal">
+          <div class="underlay"></div>
+          <div class="modal">
+               <div class="modal-title">
+                    <h3>GET A CALL BACK FOR SPECIAL OFFER</h3>
+               </div>
+               <div class="modal-body">
+                    <form action="mail-phone.php" method="post">
+                         <input type="tel" name="fPhone" onKeyPress="return isNumberKey(event)" id="fPhone"
+                         pattern="[9876][0-9]{9}" style="text-align: center;" placeholder="Enter your phone number"
+                              required>
+                         <input type="hidden" type="tel" id="ipFormInput3" name="ipFormInput">
+                         <input type="submit" name="submit_bottom" value="CALL ME BACK">
+                    </form>
+               </div>
+               <div class="modal-footer">
+                    <p>no thanks</p>
+               </div>
+          </div>
+     </div>
+     <script>
+          // if you want to use the 'fire' or 'disable' fn,
+          // you need to save OuiBounce to an object
+          var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+               aggressive: true,
+               timer: 0,
+               callback: function () { console.log('ouibounce fired!'); }
+          });
+
+          $('body').on('click', function () {
+               $('#ouibounce-modal').hide();
+          });
+
+          $('#ouibounce-modal .modal-footer').on('click', function () {
+               $('#ouibounce-modal').hide();
+          });
+
+          $('#ouibounce-modal .modal').on('click', function (e) {
+               e.stopPropagation();
+          });
+     </script>
+     <!-- End of gallery fance box -->
+
+     <!-- IP Address -->
+     <script type="application/javascript">
+          const ipFormInput1 = document.getElementById('ipFormInput1');
+          const ipFormInput2 = document.getElementById('ipFormInput2');
+          const ipFormInput3 = document.getElementById('ipFormInput3');
+          fetch('https://api.ipify.org/?format=json')
+               .then((response) => { return response.json() })
+               .then((json) => {
+                    const ip = json.ip;
+                    ipFormInput1.value = ip;
+                    ipFormInput2.value = ip;
+                    ipFormInput3.value = ip;
+               })
+               .catch((err) => { console.error(`Error getting IP Address: ${err}`) });
+     </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11394304462"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11394304462');
+</script>
+
+<script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siq8c518b89e0ae693d004359ac0bfe33dff0be6cf809c87a1b430f199a01b110eb", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+<script>
+     var months = [
+ 'January',
+ 'February',
+ 'March',
+ 'April',
+ 'May',
+ 'June',
+ 'July',
+ 'August',
+ 'September',
+ 'October',
+ 'November',
+ 'December'
+];
+
+var days = [
+ 'Sunday',
+ 'Monday',
+ 'Tuesday',
+ 'Wedensday',
+ 'Thursday',
+ 'Friday',
+ 'Saturday'
+];
+
+var days_abr = [
+ 'Su',
+ 'Mo',
+ 'Tu',
+ 'We',
+ 'Th',
+ 'Fr',
+ 'Sa'
+];
+
+Number.prototype.pad = function(num) {
+ var str = '';
+ for(var i = 0; i < (num-this.toString().length); i++)
+     str += '0';
+ return str += this.toString();
+}
+
+function calendar(widget, data)
+{
+
+ var original = widget.getElementsByClassName('actiu')[0];
+
+
+ if(typeof original === 'undefined')
+ {
+     original = document.createElement('table');
+     original.setAttribute('data-actual',
+                  data.getFullYear() + '/' +
+                  data.getMonth().pad(2) + '/' +
+                  data.getDate().pad(2))
+     widget.appendChild(original);
+ }
+
+ var diff = data - new Date(original.getAttribute('data-actual'));
+
+ diff = new Date(diff).getMonth();
+
+ var e = document.createElement('table');
+
+
+ e.className = diff  === 0 ? 'amagat-esquerra' : 'amagat-dreta';
+ e.innerHTML = '';
+
+ widget.appendChild(e);
+
+ e.setAttribute('data-actual',
+                data.getFullYear() + '/' +
+                data.getMonth().pad(2) + '/' +
+                data.getDate().pad(2))
+
+ var fila = document.createElement('tr');
+ var titol = document.createElement('th');
+ var h1Element = document.createElement('h4');
+
+h1Element.textContent = 'BOOK AN APPOINTMENT';
+
+// Append the h1 element to the th element
+titol.appendChild(h1Element);
+
+
+
+
+ titol.setAttribute('colspan', 7);
+
+ var boto_prev = document.createElement('button');
+ boto_prev.className = 'boto-prev';
+ boto_prev.innerHTML = '&#9666;';
+
+ var boto_next = document.createElement('button');
+ boto_next.className = 'boto-next';
+ boto_next.innerHTML = '&#9656;';
+
+ titol.appendChild(boto_prev);
+ titol.appendChild(document.createElement('span')).innerHTML = 
+     months[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
+
+ titol.appendChild(boto_next);
+
+ boto_prev.onclick = function() {
+     data.setMonth(data.getMonth() - 1);
+     calendar(widget, data);
+ };
+
+ boto_next.onclick = function() {
+     data.setMonth(data.getMonth() + 1);
+     calendar(widget, data);
+ };
+
+ fila.appendChild(titol);
+ e.appendChild(fila);
+
+ fila = document.createElement('tr');
+
+ for(var i = 1; i < 7; i++)
+ {
+     fila.innerHTML += '<th>' + days_abr[i] + '</th>';
+ }
+ 
+ fila.innerHTML += '<th>' + days_abr[0] + '</th>';
+ e.appendChild(fila);
+
+
+ /* Obtinc el dia que va acabar el mes anterior */
+ var inici_mes =
+     new Date(data.getFullYear(), data.getMonth(), -1).getDay();
+     var actual = new Date(data.getFullYear(),
+     data.getMonth(),
+     -inici_mes);
+     
+
+ /* 6 setmanes per cobrir totes les posiblitats
+  *  Quedaria mes consistent alhora de mostrar molts mesos 
+  *  en una quadricula */
+ for(var s = 0; s < 6; s++)
+ {
+     var fila = document.createElement('tr');
+
+     for(var d = 1; d < 8; d++)
+     {
+      var cela = document.createElement('td');
+      var span = document.createElement('span');
+
+      cela.appendChild(span);
+
+         span.innerHTML = actual.getDate();
+
+         if(actual.getMonth() !== data.getMonth())
+             cela.className = 'fora';
+
+         /* Si es avui el decorem */
+         if(data.getDate() == actual.getDate() &&
+         data.getMonth() == actual.getMonth())
+       cela.className = 'avui';
+
+      actual.setDate(actual.getDate()+1);
+         fila.appendChild(cela);
+     }
+
+     e.appendChild(fila);
+ }
+
+ setTimeout(function() {
+     e.className = 'actiu';
+     original.className +=
+     diff === 0 ? ' amagat-dreta' : ' amagat-esquerra';
+ }, 20);
+
+ original.className = 'inactiu';
+
+ setTimeout(function() {
+     var inactius = document.getElementsByClassName('inactiu');
+     for(var i = 0; i < inactius.length; i++)
+         widget.removeChild(inactius[i]);
+ }, 1000);
+
+}
+
+calendar(document.getElementById('calendar'), new Date());
+function handleDateSelection(date, month_year) {
+          document.getElementById('data_string').value = date.innerHTML + ","+ month_year
+          // console.log(date.innerHTML+","+month_year); 
+          
+         let selectedDate = new Date(date.getAttribute('data-actual'));
+         let formattedDate = `${selectedDate.getFullYear()}-${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}-${selectedDate.getDate().toString().padStart(2, '0')}`;
+         console.log(formattedDate);
+
+         // Show form and populate selected date
+         document.getElementById('calendar').style.display = 'none';
+         document.getElementById('form').style.display = 'block';
+         document.getElementsByClassName('wrapper')[0].style.display = 'block';
+         document.getElementsByClassName('wrapper')[0].style.marginTop = '0rem';
+     //     document.getElementById('selectedDate').value = formattedDate;
+     //     console.log(document.getElementById('selectedDate').value);
+     }
+
+     // Add event listeners for date selection
+     document.addEventListener('click', function(event) {
+         if (event.target.tagName === 'SPAN') {
+          let year_month = document.getElementsByClassName('any')[0].parentNode.innerHTML;
+             handleDateSelection(event.target,year_month);
+         }
+     });
+
+     calendar(document.getElementById('calendar'), new Date());
+ </script>
+
+ <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+ <script type='text/javascript'>
+
+ </script>
+</body>
+
+</html>
